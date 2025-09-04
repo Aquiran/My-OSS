@@ -4,7 +4,7 @@
 |------------|------------------|--------------------|
 | MinJoon Kim | SEOULTECH | Computer Science   |
 
-<p style="color:violet;">
+<p style="color:red;">
   I am a student at SEOULTECH UNIVERSITY majoring in Computer Science.
 </p>
 
