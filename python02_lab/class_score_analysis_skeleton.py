@@ -16,16 +16,17 @@ def calc_weighted_average(data_2d, weight):
 def analyze_data(data_1d):
     # TODO) Calculate summary statistics of the given `data_1d`
     # Note) Please don't use NumPy and other libraries. Do it yourself.
+    data_1d.sort()
     mean = 0
     var = 0
     median = 0
     mean = sum(data_1d) / len(data_1d)
     var = sum((x - mean) ** 2 for x in data_1d) / len(data_1d)
-    median = data_1d[len(data_1d) // 2 + 1] if len(data_1d) % 2 == 1 else data_1d[len(data_1d) // 2] + data_1d[len(data_1d) // 2 + 1]
+    median = data_1d[len(data_1d) // 2] if len(data_1d) % 2 == 1 else (data_1d[len(data_1d) // 2 - 1] + data_1d[len(data_1d) // 2]) / 2
     return mean, var, median, min(data_1d), max(data_1d)
 
 if __name__ == '__main__':
-    data = read_data('data/class_score_kr.csv')
+    data = read_data('data/class_score_en.csv')
     if data and len(data[0]) == 2: # Check 'data' is valid
         average = calc_weighted_average(data, [40/125, 60/100])
 
